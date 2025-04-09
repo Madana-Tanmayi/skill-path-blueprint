@@ -28,7 +28,16 @@ const Login = () => {
         title: "Success",
         description: "You have successfully logged in!",
       });
-      navigate("/dashboard");
+      
+      // Check if the user already has preferences stored
+      const hasInterests = localStorage.getItem("userInterests");
+      if (hasInterests) {
+        // If they have already set preferences, go straight to dashboard
+        navigate("/dashboard");
+      } else {
+        // If this is their first time, collect their interests
+        navigate("/interests");
+      }
     }, 1500);
   };
 

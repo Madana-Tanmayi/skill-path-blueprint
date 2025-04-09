@@ -29,7 +29,9 @@ const Register = () => {
         title: "Account created",
         description: "Your account has been created successfully!",
       });
-      navigate("/dashboard");
+      
+      // After registration, always go to interests page to collect preferences
+      navigate("/interests");
     }, 1500);
   };
 
